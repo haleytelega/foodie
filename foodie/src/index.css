@@ -18,11 +18,11 @@ code {
 
 .board-name { 
   font-weight: bold;
-  font-size: 30px;
+  font-size: 50px;
   position: absolute;
-  top: 30%;
+  top: 32%;
   bottom: 0;
-  left: 48%;
+  left: 40%;
   right: 0;
   font-family: Bradley Hand, cursive;
   font-style: italic;
@@ -32,10 +32,80 @@ code {
 .board-description { 
     font-size: 20px;
     position: absolute;
-    top: 40%;
+    top: 48%;
     bottom: 0;
     left: 32%;
     right: 0;
     font-family: Bradley Hand, cursive;
     font-style: italic;
+}
+
+.nav_home, .nav_fav, .nav_new, .nav_try {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  top: 63%;
+}
+
+.nav_home {
+  bottom: 0;
+  left: 35%;
+  right: 0;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.nav_fav {
+  bottom: 0;
+  left: 43%;
+  right: 0;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.nav_new {
+  bottom: 0;
+  left: 59%;
+  right: 0;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.nav_try {
+  bottom: 0;
+  left: 75%;
+  right: 0;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.food_photo {
+  position: absolute;
+  height: 30%;
+  width: 10%;
+  top: 15%;
+  bottom: 0;
+  left: 55%;
+  right: 0;
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  transform: rotate(-90deg)
+}
+
+.Haleys_Favourites {
+  position: absolute;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  font-size: 50px;
+  font-weight: normal;
+  top: 12%;
+  left: 30%;
+  color: black;
+}
+
+.carousel {
+  position: absolute;
 }
