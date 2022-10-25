@@ -134,7 +134,14 @@ code {
   margin-top: 2px;
 }
 
-button {
-  margin-left: 40%;
-  margin-bottom: 10px;
+.chicken_serving {
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
+  padding-left: 30%;
+}
+
+.exit {
+  padding-left: 20%;
+  font-family: Bradley Hand, cursive;
+  font-style: italic;
 }
