@@ -32,7 +32,7 @@ function Home() {
                     <Nav.Link className="nav_fav" href="/Favourites" eventKey="link-1">All time favourite</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link className="nav_new" to="/New" eventKey="link-2">Everyday Recipes</Nav.Link>
+                    <Nav.Link className="nav_new" href="/Everyday" eventKey="link-2">Everyday Recipes</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link className="nav_try" to="/Try" eventKey="link-3">I want to try</Nav.Link>

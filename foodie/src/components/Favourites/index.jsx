@@ -1,5 +1,6 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import board from '../../assets/Favourites/0.jpg';
 import chicken from '../../assets/Favourites/1.jpg'
 
@@ -9,33 +10,18 @@ function Favourite () {
         <img className="head-img" src={board} style={{ width: '100vw', height: '100vh'}} alt="cutting board" />
         <h1 className="Haleys_Favourites">Haley's Favourite Recipes</h1>
 
-        <Carousel fade>
-                <Carousel.Item className="carousel">
-                    {/* <img
-                    className="d-block w-100"
-                    src={chicken}
-                    alt="chicken paprikash"
-                    /> */}
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={chicken}
-                    alt="chicken paprikash"
-                    />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
-        </>
-    )
+        <Card style={{ width: '18rem' }} className="Chicken">
+            <Card.Img variant="top" src={chicken} className="chicken_image" />
+            <Card.Body>
+                <Card.Title className="chicken_title">Chicken Paprakash</Card.Title>
+                <Card.Text className="chicken_text">
+                    This is one of my favourite fall/winter recipes to make.
+                </Card.Text>
+            <Button variant="primary">Recipe</Button>
+        </Card.Body>
+    </Card>
+    </>
+    );
 };
 
 export default Favourite;
