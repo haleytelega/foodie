@@ -113,31 +113,36 @@ code {
   left: 20%;
 }
 
-.chicken_image{
+.Fav_image{
   width: 80%;
   height: 80%;
   padding-left: 30px;
   padding-top: 10px;
 }
 
-.chicken_title {
+.Fav_title {
   font-family: Bradley Hand, cursive;
   font-style: italic;
   font-weight: bold;
   padding-left: 25%;
 }
 
-.chicken_text {
+.Fav_text {
   font-family: Bradley Hand, cursive;
   font-style: italic;
   padding-left: 15%;
   margin-top: 2px;
 }
 
-.chicken_serving {
+.Fav_serving {
   font-family: Bradley Hand, cursive;
   font-style: italic;
   padding-left: 30%;
+}
+
+.button {
+  margin-left: 40%;
+  margin-bottom: 10px;
 }
 
 .exit {
@@ -145,3 +150,18 @@ code {
   font-family: Bradley Hand, cursive;
   font-style: italic;
 }
+
+.Fav_Home {
+  top: 32%;
+  bottom: 0;
+  left: 40%;
+  right: 0;
+}
+
+.Fajita {
+  border: 3px solid black;
+  position: absolute;
+  top: 32%;
+  left: 40%;
+}
+
