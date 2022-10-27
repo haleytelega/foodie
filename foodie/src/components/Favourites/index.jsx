@@ -27,15 +27,24 @@ const style = {
 
 
 function Favourite () {
-    const [open, setOpen] = React.useState(false[0]);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const [open, setOpen] = React.useState(false);
+    const [currentOpen, setCurrentOpen] = React.useState(false);
+    const handleOpen = (item) => {
+      setOpen(true);
+      setCurrentOpen(item);
+    };
+
+    const handleClose = (item) => {
+      setOpen(false);
+      setCurrentOpen(item);
+    };
 
     return (
         <>
         <img className="head-img" src={board} style={{ width: '100vw', height: '100vh'}} alt="cutting board" />
         <h1 className="Haleys_Favourites">Haley's Favourite Recipes</h1>
 
+        {currentOpen === "chicken1" && (
         <Card style={{ width: '18rem' }} className="Chicken">
             <Card.Img variant="top" src={chicken} className="Fav_image" />
             <Card.Body>
@@ -44,12 +53,12 @@ function Favourite () {
                     This is one of my favourite fall/winter recipes to make.
                 </Card.Text>
                 <div>
-            <Button variant="outlined" onClick={handleOpen} className="button">Recipe</Button>
+            <Button variant="outlined" onClick={() => handleOpen("chicken1")} className="button">Recipe</Button>
             <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
             open={open}
-            onClose={handleClose}
+            onClose={() => handleClose("chicken1")}
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
@@ -106,7 +115,8 @@ function Favourite () {
         </div>
         </Card.Body>
     </Card>
-
+    )}
+    {currentOpen === "chicken2" && (
     <Card style={{ width: '18rem' }} className="Fajita">
             <Card.Img variant="top" src={fajita} className="Fav_image" />
             <Card.Body>
@@ -115,12 +125,12 @@ function Favourite () {
                     Great for when you only have a few minutes to cook dinner.
                 </Card.Text>
                 <div>
-            <Button variant="outlined" onClick={handleOpen} className="button">Recipe</Button>
+            <Button variant="outlined" onClick={() => handleOpen("chicken2")} className="button">Recipe</Button>
             <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
             open={open}
-            onClose={handleClose}
+            onClose={() => handleClose("chicken2")}
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
@@ -172,6 +182,7 @@ function Favourite () {
         </div>
         </Card.Body>
     </Card>
+    )}
     {/* <Nav className="Fav_Home">
         <Nav.Item>
             <Nav.Link className="nav_home" href="/Home">Home</Nav.Link>
