@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import board from "../../assets/Favourites/0.jpg";
 import chicken from "../../assets/Favourites/1.jpg";
 import fajita from "../../assets/Favourites/2.jpg";
+import broccoli from '../../assets/Favourites/3.jpeg'
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -26,250 +27,347 @@ const style = {
 };
 
 function Favourite() {
-  const [open, setOpen] = React.useState(false);
-  const [currentOpen, setCurrentOpen] = React.useState(false);
-  const handleOpen = (item) => {
-    setOpen(true);
-    setCurrentOpen(item);
-  };
+    const [open, setOpen] = React.useState(false);
+    const [currentOpen, setCurrentOpen] = React.useState(false);
+    const handleOpen = (item) => {
+        setOpen(true);
+        setCurrentOpen(item);
+    };
 
-  const handleClose = (item) => {
-    setOpen(false);
-    setCurrentOpen(item);
-  };
+    const handleClose = (item) => {
+        setOpen(false);
+        setCurrentOpen(item);
+    };
 
-  return (
-    <>
-      <img
-        className="head-img"
-        src={board}
-        style={{ width: "100vw", height: "100vh" }}
-        alt="cutting board"
-      />
-      <h1 className="Haleys_Favourites">Haley's Favourite Recipes</h1>
+    return (
+        <>
+        <img
+            className="head-img"
+            src={board}
+            style={{ width: "100vw", height: "100vh" }}
+            alt="cutting board"
+        />
+        <h1 className="Haleys_Favourites">Haley's Favourite Recipes</h1>
 
-      <Card style={{ width: "18rem" }} className="Chicken">
-        <Card.Img variant="top" src={chicken} className="Fav_image" />
-        <Card.Body>
-          <Card.Title className="Fav_title">Chicken Paprakash</Card.Title>
-          <Card.Text className="Fav_text">
-            This is one of my favourite fall/winter recipes to make.
-          </Card.Text>
-          <div>
-            <Button
-              variant="outlined"
-              onClick={() => handleOpen("chicken1")}
-              className="button"
-            >
-              Recipe
-            </Button>
+        <Card style={{ width: "18rem" }} className="Chicken">
+            <Card.Img variant="top" src={chicken} className="Fav_image" />
+            <Card.Body>
+            <Card.Title className="Fav_title">Chicken Paprakash</Card.Title>
+            <Card.Text className="Fav_text">
+                This is one of my favourite fall/winter recipes to make.
+            </Card.Text>
+            <div>
+                <Button
+                variant="outlined"
+                onClick={() => handleOpen("chicken1")}
+                className="button"
+                >
+                Recipe
+                </Button>
 
-            {currentOpen === "chicken1" && (
-              <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={() => handleClose("chicken1")}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }}
-              >
-                <Fade in={open}>
-                  <Box sx={style}>
-                    <Typography
-                      id="transition-modal-title"
-                      variant="h6"
-                      component="h2"
-                      className="chicken_title"
-                    >
-                      Chicken Paprakash
-                    </Typography>
-                    <Typography
-                      id="transition-modal-title"
-                      variant="subtitle1"
-                      component="h2"
-                      className="chicken_serving"
-                    >
-                      Serving: 4 people
-                    </Typography>
-                    <Row xs={1} md={2}>
-                      <Col>
+                {currentOpen === "chicken1" && (
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    open={open}
+                    onClose={() => handleClose("chicken1")}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                    <Box sx={style}>
                         <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
+                        id="transition-modal-title"
+                        variant="h6"
+                        component="h2"
+                        className="chicken_title"
                         >
-                          Ingredients:
-                          <ol>
-                            <li>4 chicken legs</li>
-                            <li>oil</li>
-                            <li>half an onion (chopped) </li>
-                            <li>4 tablespoons of paprika</li>
-                            <li>2 1/2 cups chicken broth</li>
-                            <li>1 tub of sour cream</li>
-                            <li>1 tablespoon of flour</li>
-                            <li>salt</li>
-                            <li>egg noodles</li>
-                          </ol>
-                        </Typography>
-                      </Col>
-                      <Col>
-                        <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
-                        >
-                          Instructions:
-                          <ol>
-                            <li>
-                              Season chicken with salt and pepper then brown
-                              chicken in oil.
-                            </li>
-                            <li>
-                              As chicken is browning, combine sour cream and
-                              flour.
-                            </li>
-                            <li>Put browned chicken in dutch oven.</li>
-                            <li>Add more oil and cook onions until soft.</li>
-                            <li>
-                              Add paprika and stir completely. Add sour cream
-                              and onion mix and stir completley and then add
-                              chicken broth
-                            </li>
-                            <li>
-                              Stir until all combined and cook for 10 minutes.
-                            </li>
-                            <li>
-                              Pour sauce into dutch oven and cook at 350% for 45
-                              minutes
-                            </li>
-                            <li>Serve with buttery egg noodles</li>
-                          </ol>
+                        Chicken Paprakash
                         </Typography>
                         <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
-                          className="exit"
-                          variant="subtitle1"
+                        id="transition-modal-title"
+                        variant="subtitle1"
+                        component="h2"
+                        className="chicken_serving"
                         >
-                          Click outside of the box to exit!
+                        Serving: 4 people
                         </Typography>
-                      </Col>
-                    </Row>
-                  </Box>
-                </Fade>
-              </Modal>
-            )}
-          </div>
-        </Card.Body>
-      </Card>
+                        <Row xs={1} md={2}>
+                        <Col>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Ingredients:
+                            <ol>
+                                <li>4 chicken legs</li>
+                                <li>oil</li>
+                                <li>half an onion (chopped) </li>
+                                <li>4 tablespoons of paprika</li>
+                                <li>2 1/2 cups chicken broth</li>
+                                <li>1 tub of sour cream</li>
+                                <li>1 tablespoon of flour</li>
+                                <li>salt</li>
+                                <li>egg noodles</li>
+                            </ol>
+                            </Typography>
+                        </Col>
+                        <Col>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Instructions:
+                            <ol>
+                                <li>
+                                Season chicken with salt and pepper then brown
+                                chicken in oil.
+                                </li>
+                                <li>
+                                As chicken is browning, combine sour cream and
+                                flour.
+                                </li>
+                                <li>Put browned chicken in dutch oven.</li>
+                                <li>Add more oil and cook onions until soft.</li>
+                                <li>
+                                Add paprika and stir completely. Add sour cream
+                                and onion mix and stir completley and then add
+                                chicken broth
+                                </li>
+                                <li>
+                                Stir until all combined and cook for 10 minutes.
+                                </li>
+                                <li>
+                                Pour sauce into dutch oven and cook at 350% for 45
+                                minutes
+                                </li>
+                                <li>Serve with buttery egg noodles</li>
+                            </ol>
+                            </Typography>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            className="exit"
+                            variant="subtitle1"
+                            >
+                            Click outside of the box to exit!
+                            </Typography>
+                        </Col>
+                        </Row>
+                    </Box>
+                    </Fade>
+                </Modal>
+                )}
+            </div>
+            </Card.Body>
+        </Card>
 
-      <Card style={{ width: "18rem" }} className="Fajita">
-        <Card.Img variant="top" src={fajita} className="Fav_image" />
-        <Card.Body>
-          <Card.Title className="Fav_title">Chicken Fajitas</Card.Title>
-          <Card.Text className="Fav_text">
-            Great for when you only have a few minutes to cook dinner.
-          </Card.Text>
-          <div>
-            <Button
-              variant="outlined"
-              onClick={() => handleOpen("chicken2")}
-              className="button"
-            >
-              Recipe
-            </Button>
+        <Card style={{ width: "18rem" }} className="Fajita">
+            <Card.Img variant="top" src={fajita} className="fajita_photo" />
+            <Card.Body>
+            <Card.Title className="Fav_title">Chicken Fajitas</Card.Title>
+            <Card.Text className="Fav_text">
+                Great for when you only have a few minutes to cook dinner.
+            </Card.Text>
+            <div>
+                <Button
+                variant="outlined"
+                onClick={() => handleOpen("chicken2")}
+                className="button"
+                >
+                Recipe
+                </Button>
 
-            {currentOpen === "chicken2" && (
-              <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={() => handleClose("chicken2")}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }}
-              >
-                <Fade in={open}>
-                  <Box sx={style}>
-                    <Typography
-                      id="transition-modal-title"
-                      variant="h6"
-                      component="h2"
-                      className="Fav_title"
-                    >
-                      Chicken Fajitas
-                    </Typography>
-                    <Typography
-                      id="transition-modal-titles"
-                      variant="subtitle1"
-                      component="h2"
-                      className="Fav_serving"
-                    >
-                      Serving: 4 people
-                    </Typography>
-                    <Row>
-                      <Col md={6}>
+                {currentOpen === "chicken2" && (
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    open={open}
+                    onClose={() => handleClose("chicken2")}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                    <Box sx={style}>
                         <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
+                        id="transition-modal-title"
+                        variant="h6"
+                        component="h2"
+                        className="Fav_title"
                         >
-                          Ingredients:
-                          <ol>
-                            <li>3 chicken breast</li>
-                            <li>oil</li>
-                            <li>half an onion (sliced)</li>
-                            <li>2 large peppers (sliced)</li>
-                            <li>1-2 Old El Paso Fajita seasoning packets</li>
-                            <li>Tortillas</li>
-                          </ol>
-                        </Typography>
-                      </Col>
-                      <Col md={6}>
-                        <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
-                        >
-                          Instructions:
-                          <ol>
-                            <li>Cook chicken in oil until cooked.</li>
-                            <li>Add packets of seasoning.</li>
-                            <li>Add onion and peppers.</li>
-                            <li>
-                              1/4-2/3 cups (depending how many packets used).
-                            </li>
-                            <li>Cook everything for 3-5 minutes</li>
-                            <li>
-                              Put in tortilla with all condaments you want.
-                            </li>
-                          </ol>
+                        Chicken Fajitas
                         </Typography>
                         <Typography
-                          id="transition-modal-description"
-                          sx={{ mt: 2 }}
-                          className="exit"
-                          variant="subtitle1"
+                        id="transition-modal-titles"
+                        variant="subtitle1"
+                        component="h2"
+                        className="Fav_serving"
                         >
-                          Click outside of the box to exit!
+                        Serving: 4 people
                         </Typography>
-                      </Col>
-                    </Row>
-                  </Box>
-                </Fade>
-              </Modal>
-            )}
-          </div>
-        </Card.Body>
-      </Card>
-      {/* <Nav className="Fav_Home">
-        <Nav.Item>
-            <Nav.Link className="nav_home" href="/Home">Home</Nav.Link>
-        </Nav.Item>
-        </Nav> */}
-    </>
-  );
+                        <Row>
+                        <Col md={6}>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Ingredients:
+                            <ol>
+                                <li>3 chicken breast</li>
+                                <li>oil</li>
+                                <li>half an onion (sliced)</li>
+                                <li>2 large peppers (sliced)</li>
+                                <li>1-2 Old El Paso Fajita seasoning packets</li>
+                                <li>Tortillas</li>
+                            </ol>
+                            </Typography>
+                        </Col>
+                        <Col md={6}>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Instructions:
+                            <ol>
+                                <li>Cook chicken in oil until cooked.</li>
+                                <li>Add packets of seasoning.</li>
+                                <li>Add onion and peppers.</li>
+                                <li>
+                                1/4-2/3 cups (depending how many packets used).
+                                </li>
+                                <li>Cook everything for 3-5 minutes</li>
+                                <li>
+                                Put in tortilla with all condaments you want.
+                                </li>
+                            </ol>
+                            </Typography>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            className="exit"
+                            variant="subtitle1"
+                            >
+                            Click outside of the box to exit!
+                            </Typography>
+                        </Col>
+                        </Row>
+                    </Box>
+                    </Fade>
+                </Modal>
+                )}
+            </div>
+            </Card.Body>
+        </Card>
+
+        <Card style={{ width: "18rem" }} className="broccoli">
+            <Card.Img variant="top" src={broccoli} className="broccoli_photo" />
+            <Card.Body>
+            <Card.Title className="Fav_title">Baked Gnoochi with Broccoli</Card.Title>
+            <Card.Text className="Fav_text">
+                Fast and easy gnoochi dish.
+            </Card.Text>
+            <div>
+                <Button
+                variant="outlined"
+                onClick={() => handleOpen("meal3")}
+                className="button"
+                >
+                Recipe
+                </Button>
+
+                {currentOpen === "meal3" && (
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    open={open}
+                    onClose={() => handleClose("meal3")}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                    timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                    <Box sx={style}>
+                        <Typography
+                        id="transition-modal-title"
+                        variant="h6"
+                        component="h2"
+                        className="Fav_title"
+                        >
+                        Baked Gnoochi and Broccoli
+                        </Typography>
+                        <Typography
+                        id="transition-modal-titles"
+                        variant="subtitle1"
+                        component="h2"
+                        className="Fav_serving"
+                        >
+                        Serving: 4 people
+                        </Typography>
+                        <Row>
+                        <Col md={6}>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Ingredients:
+                            <ol>
+                                <li>1lb gnoochi</li>
+                                <li>2-3 broccoli heads</li>
+                                <li>2 cups of chicken broth</li>
+                                <li>1 cream cheese packet (cubed)</li>
+                                <li>red pepper flakes (as much as you want)</li>
+                                <li>2 Mozerella Cheese (shredded)</li>
+                            </ol>
+                            </Typography>
+                        </Col>
+                        <Col md={6}>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            >
+                            Instructions:
+                            <ol>
+                                <li>Bring large pot of water to boil. Once boiled
+                                cook broccoli for 3 minutes then put in gnoochi and cook.</li>
+                                <li>As gnoochi is cooking, heat up broth in pan and once hot put in cubed
+                                cream cheese.</li>
+                                <li>Mix in cream chesse until melted then mix and melt 1 cup mozerella and add red pepper flakes.</li>
+                                <li>Once cheese is melted, add in gnoochi and broccoli.</li>
+                                <li>Bake at 400 degrees for 10 minutes covered.</li>
+                            </ol>
+                            </Typography>
+                            <Typography
+                            id="transition-modal-description"
+                            sx={{ mt: 2 }}
+                            className="exit"
+                            variant="subtitle1"
+                            >
+                            Click outside of the box to exit!
+                            </Typography>
+                        </Col>
+                        </Row>
+                    </Box>
+                    </Fade>
+                </Modal>
+                )}
+            </div>
+            </Card.Body>
+        </Card>
+        {/* <Nav className="Fav_Home">
+            <Nav.Item>
+                <Nav.Link className="nav_home" href="/Home">Home</Nav.Link>
+            </Nav.Item>
+            </Nav> */}
+        </>
+    );
 }
 
 export default Favourite;

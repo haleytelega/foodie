@@ -1,6 +1,5 @@
 import React from 'react';
 import board from '../../assets/mainPage/0.jpeg'
-import food from '../../assets/mainPage/1.jpg'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -38,7 +37,6 @@ function Home() {
                     <Nav.Link className="nav_try" to="/Try" eventKey="link-3">I want to try</Nav.Link>
                 </Nav.Item>
             </Nav>
-            <img src={food} className="food_photo" alt="cutting board" />
         </>
     )
 }
